@@ -105,15 +105,15 @@
 	<fval name="name"><value>sampleuser</value></fval>
 	<fval name="password"><value>Y2hhbmdlbWU=</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="IdentityAttribute" entityPK="4031667507131278060" parentPK="-212999845297105244">
-	<fval name="name"><value>gender</value></fval>
-	<fval name="type"><value>String</value></fval>
-	<fval name="value"><value>female</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="IdentityAttribute" entityPK="-5767405199670452481" parentPK="-212999845297105244">
 	<fval name="name"><value>role</value></fval>
 	<fval name="type"><value>String</value></fval>
 	<fval name="value"><value>resourceowner</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="IdentityAttribute" entityPK="4031667507131278060" parentPK="-212999845297105244">
+	<fval name="name"><value>gender</value></fval>
+	<fval name="type"><value>String</value></fval>
+	<fval name="value"><value>female</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="IdentityAttribute" entityPK="-5106609132757993704" parentPK="-212999845297105244">
 	<fval name="name"><value>email_verified</value></fval>
@@ -199,6 +199,11 @@
 	<fval name="name"><value>gender</value></fval>
 	<fval name="type"><value>String</value></fval>
 	<fval name="value"><value>male</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="User" entityPK="-6318446346847261469" parentPK="-7782747970542268047">
+	<fval name="certificate"><value contentType="reference">-1</value></fval>
+	<fval name="name"><value>dev1</value></fval>
+	<fval name="password"><value>Y2hhbmdlbWUx</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ESConfiguration" entityPK="309457301822921510" parentPK="0">
 	<fval name="name"><value>Entity Store Configuration</value></fval>

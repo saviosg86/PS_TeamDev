@@ -1631,13 +1631,13 @@
 	<fval name="name"><value>Pragma</value></fval>
 	<fval name="value"><value>no-cache</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="2971740559372777529" parentPK="1337947075467613090">
-	<fval name="name"><value>X-XSS-Protection</value></fval>
-	<fval name="value"><value>1; mode=block</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-8445950448682343198" parentPK="1337947075467613090">
 	<fval name="name"><value>X-Frame-Options</value></fval>
 	<fval name="value"><value>DENY</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="2971740559372777529" parentPK="1337947075467613090">
+	<fval name="name"><value>X-XSS-Protection</value></fval>
+	<fval name="value"><value>1; mode=block</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-1897368467968840131" parentPK="1337947075467613090">
 	<fval name="name"><value>Expires</value></fval>
@@ -5590,5 +5590,85 @@
 	<fval name="evaluate"><value>true</value></fval>
 	<fval name="name"><value>CUSTOM_POLICY_REQ</value></fval>
 	<fval name="priority"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransfer" entityPK="-4566897170619242722" parentPK="-6065173590656156488">
+	<fval name="bindingAddress"><value>*</value></fval>
+	<fval name="deleteFileOnSuccessfulResponse"><value>0</value></fval>
+	<fval name="fileExpiry"><value>3600</value></fval>
+	<fval name="filePurgerSleepTime"><value>1800</value></fval>
+	<fval name="goodbyeMessage"><value></value></fval>
+	<fval name="idleTimeout"><value>0</value></fval>
+	<fval name="inDir"><value>${environment.VINSTDIR}/file-transfer/in/</value></fval>
+	<fval name="keyPair"><value contentType="reference">-1</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="name"><value>Axway FTP Server</value></fval>
+	<fval name="opsSettingsUsage"><value>SYSTEM</value></fval>
+	<fval name="outDir"><value>out</value></fval>
+	<fval name="passwordAuthCircuit"><value contentType="reference">
+<key type='FilterCircuit'><id field='name' value='Test Policy'/></key>	</value></fval>
+	<fval name="payloadMask"><value>0</value></fval>
+	<fval name="persistent"><value>true</value></fval>
+	<fval name="port"><value>10021</value></fval>
+	<fval name="pubKeyAuthCircuit"><value contentType="reference">-1</value></fval>
+	<fval name="quarantineDir"><value>quarantine</value></fval>
+	<fval name="recordCircuitPath"><value>1</value></fval>
+	<fval name="recordInboundTxns"><value>1</value></fval>
+	<fval name="recordOutboundTxns"><value>1</value></fval>
+	<fval name="recordReceived"><value>1</value></fval>
+	<fval name="recordSent"><value>1</value></fval>
+	<fval name="recordTrace"><value>1</value></fval>
+	<fval name="responseSuffix"><value>.resp.${id}</value></fval>
+	<fval name="serviceType"><value>sftp</value></fval>
+	<fval name="sslCertificate"><value contentType="reference">
+<key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='Demo X509 Cert'/></key></key>	</value></fval>
+	<fval name="useImplicitFtps"><value>false</value></fval>
+	<fval name="welcomeMessage"><value></value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransferCommand" entityPK="4169949739501886316" parentPK="-4566897170619242722">
+	<fval name="description"><value>Support unique filename</value></fval>
+	<fval name="enabled"><value>0</value></fval>
+	<fval name="name"><value>STOU</value></fval>
+	<fval name="type"><value>ftp(s)</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransferCommand" entityPK="-7272684500107721303" parentPK="-4566897170619242722">
+	<fval name="description"><value>Allow user to delete files</value></fval>
+	<fval name="enabled"><value>0</value></fval>
+	<fval name="name"><value>DELE</value></fval>
+	<fval name="type"><value>ftp(s)</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransferCommand" entityPK="2438643136221724247" parentPK="-4566897170619242722">
+	<fval name="description"><value>Support passive mode</value></fval>
+	<fval name="enabled"><value>1</value></fval>
+	<fval name="name"><value>PASV</value></fval>
+	<fval name="type"><value>ftp(s)</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransferCommand" entityPK="4576600618277258403" parentPK="-4566897170619242722">
+	<fval name="description"><value>Support restart mode</value></fval>
+	<fval name="enabled"><value>0</value></fval>
+	<fval name="name"><value>REST</value></fval>
+	<fval name="type"><value>ftp(s)</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransferCommand" entityPK="1267912148886890971" parentPK="-4566897170619242722">
+	<fval name="description"><value>Allow user to delete directories</value></fval>
+	<fval name="enabled"><value>0</value></fval>
+	<fval name="name"><value>RMD</value></fval>
+	<fval name="type"><value>ftp(s)</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransferCommand" entityPK="-1330899344287815363" parentPK="-4566897170619242722">
+	<fval name="description"><value>Disable Bounce attack over PORT</value></fval>
+	<fval name="enabled"><value>0</value></fval>
+	<fval name="name"><value>PORT</value></fval>
+	<fval name="type"><value>ftp(s)</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FileTransferCommand" entityPK="-4147961646894768318" parentPK="-4566897170619242722">
+	<fval name="description"><value>Disable Bounce attack over EPRT</value></fval>
+	<fval name="enabled"><value>0</value></fval>
+	<fval name="name"><value>EPRT</value></fval>
+	<fval name="type"><value>ftp(s)</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PatternPolicyPair" entityPK="-5014307614181986253" parentPK="-4566897170619242722">
+	<fval name="pattern"><value>.*</value></fval>
+	<fval name="policy"><value contentType="reference">
+<key type='FilterCircuit'><id field='name' value='Test Policy'/></key>	</value></fval>
 </entity>
 </entityStoreData>

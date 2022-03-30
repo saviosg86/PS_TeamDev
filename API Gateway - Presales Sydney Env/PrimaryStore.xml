@@ -24100,8 +24100,7 @@
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="3070140876893299971" parentPK="3092611341937378675">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">6846210788818813089</value></fval>
-	<fval name="circuitPK"><value contentType="reference">
-<key type='FilterCircuit'><id field='name' value='Initiate Customer Info Svc'/></key>	</value></fval>
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
 	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
 	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
 	<fval name="logMask"><value>2</value></fval>
@@ -24128,8 +24127,7 @@
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="764345164006026130" parentPK="3092611341937378675">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">6846210788818813089</value></fval>
-	<fval name="circuitPK"><value contentType="reference">
-<key type='FilterCircuit'><id field='name' value='Process and Transform Response'/></key>	</value></fval>
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
 	<fval name="failureNode"><value contentType="reference">-1474159162783023524</value></fval>
 	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
 	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
@@ -24478,6 +24476,53 @@
 	<fval name="name"><value>Create a Soap request - Account </value></fval>
 	<fval name="outputContentType"><value>application/soap+xml</value></fval>
 	<fval name="successNode"><value contentType="reference">-4301582582200328399</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="6075836431064514456" parentPK="-5513627975207617101">
+	<fval name="name"><value>FTP</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-5391561999334383827" parentPK="6075836431064514456">
+	<fval name="category"><value contentType="reference">8400115972852848325</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>Password Authentication Policy</value></fval>
+	<fval name="start"><value contentType="reference">-3655878919549735542</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeAuthnFilter" entityPK="-3655878919549735542" parentPK="-5391561999334383827">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">4317017090579147940</value></fval>
+	<fval name="credentialFormat"><value>Username</value></fval>
+	<fval name="failureNode"><value contentType="reference">6576336480888361657</value></fval>
+	<fval name="logFailure"><value>Failed to authenticate using username-password attributes.</value></fval>
+	<fval name="logFatal"><value>Error during authentication using username-password attributes. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Authenticated via username-password attributes sucessfully.</value></fval>
+	<fval name="name"><value>Authentication of User against the Local Store</value></fval>
+	<fval name="password"><value>${authentication.subject.password}</value></fval>
+	<fval name="repository"><value contentType="reference">
+<key type='AuthnRepositoryGroup'><id field='name' value='Authentication Repositories'/><key type='AuthnRepositoryLocalGroup'><id field='name' value='Local Repositories'/><key type='AuthnRepositoryLocal'><id field='name' value='Local User Store'/></key></key></key>	</value></fval>
+	<fval name="successNode"><value contentType="reference">8325129326140249896</value></fval>
+	<fval name="username"><value>${authentication.subject.id}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TrueFilter" entityPK="8325129326140249896" parentPK="-5391561999334383827">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">6846210788818813089</value></fval>
+	<fval name="logFailure"><value></value></fval>
+	<fval name="logFatal"><value>True filter error. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>True filter passed</value></fval>
+	<fval name="name"><value>True Filter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FalseFilter" entityPK="6576336480888361657" parentPK="-5391561999334383827">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">6846210788818813089</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>False filter error. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value></value></fval>
+	<fval name="name"><value>False Filter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Internationalization" entityPK="-4274489846238310323" parentPK="0">
 	<fval name="country"><value>IT</value></fval>
